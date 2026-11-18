@@ -1,0 +1,188 @@
+/*!
+ * Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+.image-grid {
+  --gap: 16px;
+  --num-cols: 4;
+  --row-height: 300px;
+
+  box-sizing: border-box;
+  padding: var(--gap);
+  
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  grid-auto-rows: var(--row-height);
+  gap: var(--gap);
+}
+
+.image-grid > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ hr.new1 {
+  border-top: 3px solid;
+ }
+ hr.new2 {
+  border-top: 1px dashed;
+}
+hr.new3 {
+  border-top: 1px dotted;
+}
+
+.descriptor {
+  display: flex
+  align-items: center; 
+  vertical-align: middle;
+  justify-content: center;
+}
+
+.container {
+margin-top: 1em
+}
+
+body {
+    overflow-x: hidden;
+}
+
+p { text-indent: 1em; margin: 0 }
+a,
+a:focus,
+a:active,
+a:hover,
+a.active {
+    outline: 5;
+    text-decoration: none;
+    
+}
+
+a:hover {font-style: italic}
+
+.static {
+    position: absolute;
+    background: white;
+   }
+  
+  .static:hover {
+    opacity: 0;
+   }
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+    font-family: "Times New Roman","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+}  
+
+h7{
+    font-family: "Times New Roman","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 100;
+}
+
+hr.star-light,
+hr.star-lighter,
+hr.star-primary,
+hr.star-primaryer {
+    margin: 25px auto 30px;
+    padding: 0;
+    max-width: 250px;
+    border: 0;
+    border-top: solid 5px;
+    text-align: left;
+}
+/* ---- grid ---- */
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 20px 20px;
+    padding: 20px;
+    
+  }
+  .grid > div {
+    background: #fdfdfd;
+    padding: 0em;
+    border-radius: 0rem;
+  }
+  body {
+    margin: 0rem;
+    font: 12px system-ui;
+  }
+
+  figure {
+    margin: 0;
+    position: relative
+  }
+  
+  
+.ries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100, 400px));
+  grid-gap: 20px 20px;
+}
+
+.ries {
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap;
+  height: minmax(100px, 500px);
+}
+
+
+@media screen and (min-width: 600px) {
+.extra {
+  height: 300px
+}
+}
+
+
+@media screen and (max-width: 600px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px 20px;
+    padding: 20px;
+  }
+
+  .extra{
+    width: 250px;
+  }
+}
+.yt-facade {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  border: none;
+}
+.yt-facade::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.15);
+  transition: background 0.2s ease;
+}
+.yt-facade:hover::before {
+  background: rgba(0,0,0,0.3);
+}
+.yt-facade .yt-play-btn {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px; height: 48px;
+  z-index: 2;
+}
+.yt-facade .yt-play-btn svg {
+  width: 100%; height: 100%;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
