@@ -2,13 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Michael Patten - Editing</title>
-    <link rel="canonical" href="https://goodmood.pics/">
-    <meta http-equiv="refresh" content="0; url=https://goodmood.pics/#work">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Michael Patten - Edit</title>
     <meta name="robots" content="noindex">
-    <script>location.replace("https://goodmood.pics/#work");</script>
+    <noscript><meta http-equiv="refresh" content="20; url=https://goodmood.pics/"></noscript>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/freelancer.css" rel="stylesheet">
+    <style>
+        body { background: #fff; color: #000; }
+        .hop {
+            font-family: "Times New Roman", Times, serif; font-size: 14px; line-height: 1.45;
+            max-width: 34em; margin: 12vh auto 0; padding: 0 16px 60px;
+        }
+        .hop p { text-indent: 0; margin: 0 0 1.2em; }
+        .step { visibility: hidden; }
+        .step.on { visibility: visible; }
+        .dots::after { content: ""; animation: dots 1.2s steps(4) infinite; }
+        @keyframes dots { 0% {content:""} 25% {content:"."} 50% {content:".."} 75% {content:"..."} }
+        .cursor { animation: blink 1s steps(1) infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+        .logo { display: block; width: 116px; height: auto; margin: 0 0 1.2em; }
+        .bar { font-family: "Courier New", Courier, monospace; white-space: pre; }
+        .skip { font-size: 12px; }
+        @media (prefers-reduced-motion: reduce) { .dots::after, .cursor { animation: none; } .dots::after { content: "..."; } }
+    </style>
 </head>
 <body>
-    <p>Editing work now lives at <a href="https://goodmood.pics/#work">goodmood.pics</a>.</p>
+<div class="hop">
+    <p><strong>Redirecting to <a href="https://goodmood.pics/">goodmood.pics</a></strong><span class="dots"></span></p>
+
+    <p class="step" id="s1">I started out cutting trailers for small art-house releases, then went on to edit commercials, broadcast spots and branded work. I also won a Promax Gold Award.</p>
+
+    <div class="step" id="s2">
+        <p>Now I run Good Mood Pics, an independent creative studio for editing, motion and storytelling.</p>
+        <a href="https://goodmood.pics/"><img class="logo" src="img/goodmood-logo.svg" alt="Good Mood Pics"></a>
+    </div>
+
+    <p class="step" id="s3"><span class="bar" id="bar">[                    ]</span> <span class="cursor">_</span></p>
+
+    <p class="skip"><a href="https://goodmood.pics/">skip &rarr;</a> &nbsp;/&nbsp; <a href="index.html">back</a></p>
+</div>
+<script>
+(function () {
+    var DEST = "https://goodmood.pics/";
+    var go = function () { location.href = DEST; };
+    var on = function (id) { document.getElementById(id).className += " on"; };
+    var t = [];
+    t.push(setTimeout(function () { on("s1"); }, 1400));     // editor bio
+    t.push(setTimeout(function () { on("s2"); }, 6000));     // Good Mood Pics + logo
+    t.push(setTimeout(function () {                          // old-school loading bar, then go
+        on("s3");
+        var bar = document.getElementById("bar"), n = 0, W = 20;
+        var iv = setInterval(function () {
+            n++;
+            bar.textContent = "[" + Array(n + 1).join("#") + Array(W - n + 1).join(" ") + "]";
+            if (n >= W) { clearInterval(iv); setTimeout(go, 400); }
+        }, 200);
+    }, 8000));
+    // Enter or space skips ahead
+    document.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") go(); });
+})();
+</script>
 </body>
 </html>
