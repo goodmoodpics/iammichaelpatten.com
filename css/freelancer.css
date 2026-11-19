@@ -189,10 +189,12 @@ hr.star-primaryer {
 /* One line per credit/screening; wrapped lines hang-indent so entries stay distinct */
 .entry { display: block; }
 
-/* Phones: slightly larger text, gutter for the nav, roomier tap targets */
+/* Screenings & Accolades: same face and size as the bio, at every width */
+.accolades { font-family: "Times New Roman", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; }
+
+/* Phones: no size changes; just a gutter for the nav, roomier tap targets, and hanging indents */
 @media (max-width: 600px) {
-    body { font-size: 14px; }
-    .intro-text { padding: 0 16px; font-size: 13px; }
+    .intro-text { padding: 0 16px; }
     .intro-text p { text-indent: 0; padding: .3em 0 .3em 1em; line-height: 1.4; }
     .intro-text .kind { display: none; }   /* year + "- Feature Film" etc.: desktop only, so titles fit on one line */
     .entry { padding-left: 1.2em; text-indent: -1.2em; margin-bottom: .4em; }
