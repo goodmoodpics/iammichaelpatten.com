@@ -38,7 +38,7 @@
         <a href="https://goodmood.pics/"><img class="logo" src="img/goodmood-logo.svg" alt="Good Mood Pics"></a>
     </div>
 
-    <p class="step" id="s3"><span class="bar" id="bar">[                    ]</span> <span class="cursor">_</span></p>
+    <p id="s3"><span class="bar" id="bar">[                    ]</span> <span class="cursor">_</span></p>
 
     <p class="skip"><a href="https://goodmood.pics/#work">skip to samples &rarr;</a> &nbsp;/&nbsp; <a href="index.html">back</a></p>
 </div>
@@ -47,18 +47,15 @@
     var DEST = "https://goodmood.pics/";
     var go = function () { location.href = DEST; };
     var on = function (id) { document.getElementById(id).className += " on"; };
-    var t = [];
-    t.push(setTimeout(function () { on("s1"); }, 1400));     // editor bio
-    t.push(setTimeout(function () { on("s2"); }, 6000));     // Good Mood Pics + logo
-    t.push(setTimeout(function () {                          // old-school loading bar, then go
-        on("s3");
-        var bar = document.getElementById("bar"), n = 0, W = 20;
-        var iv = setInterval(function () {
-            n++;
-            bar.textContent = "[" + Array(n + 1).join("#") + Array(W - n + 1).join(" ") + "]";
-            if (n >= W) { clearInterval(iv); setTimeout(go, 400); }
-        }, 200);
-    }, 8000));
+    setTimeout(function () { on("s1"); }, 250);     // editor bio
+    setTimeout(function () { on("s2"); }, 4500);    // Good Mood Pics + logo
+    // Old-school loading bar runs from the start and fills over ~10s, then go
+    var bar = document.getElementById("bar"), n = 0, W = 20;
+    var iv = setInterval(function () {
+        n++;
+        bar.textContent = "[" + Array(n + 1).join("#") + Array(W - n + 1).join(" ") + "]";
+        if (n >= W) { clearInterval(iv); setTimeout(go, 400); }
+    }, 500);
     // Enter or space skips ahead
     document.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") go(); });
 })();
