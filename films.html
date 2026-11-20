@@ -69,7 +69,7 @@
               <div class="flex-child">
                 <p><h5>THE WOMAN WHO COULD READ THE MINDS OF DOGS / 2026 / Writer & Director / 77 min / <a href="https://docs.google.com/document/d/1vn-uH4UyLRUP_7Y8Ymo87VFD0IC2I59XdOcSk2g7Jbc/edit?usp=sharing" target="_blank">PRESS KIT</a></h5></p>
                 <p><h5>Vicky, an aspiring dancer from Madrid, is working as an au pair for a New York City family. When rumors surface about a violent unhoused man roaming Prospect Park, she must confront these escalating threats while searching for the missing family dog.</h5></p>
-                <p><h5><span class="entry">Feb 5 & 7, 2026 : DCTV's Firehouse Cinema (NYC)</span><span class="entry">April 26, 2026 : Low Cinema w/ Q&A moderated by Caveh Zahedi (NYC)</span><span class="entry">June 4, 2026 : Rio Cinema presented by Stupid Co as part of the Cannes Dogs Screening Series (London)</span><span class="entry">Nov 1, 2026 : The Paradise presented by Stupid Co as part of the Cannes Dogs Screening Series (Toronto)</span><span class="entry">Dec 12, 2026 : <a href="https://prod1.agileticketing.net/websales/pages/info.aspx?evtinfo=582898~93654fc6-c14e-40a7-812a-d5d2baa619e8" target="_blank">The Lark</a> presented by Stupid Co as part of the Cannes Dogs Screening Series (Larkspur, CA)</span><span class="entry">Dec 13, 2026 : <a href="https://lumierecinemala.com/films/cannes-dogs-la-the-woman-who-could-read-the-minds-of-dogs--xolo/" target="_blank">The Lumiere</a> presented by Stupid Co as part of the Cannes Dogs Screening Series (Los Angeles)</span>
+                <p><h5><span class="entry">Feb 5 & 7, 2026 : DCTV's Firehouse Cinema (NYC)</span><span class="entry">April 26, 2026 : Low Cinema w/ Q&A moderated by Caveh Zahedi (NYC)</span><span class="entry">June 4, 2026 : Rio Cinema presented by Stupid Co as part of the Cannes Dogs Screening Series (London)</span><span class="entry">Nov 1, 2026 : The Paradise presented by Stupid Co as part of the Cannes Dogs Screening Series (Toronto)</span><span class="entry">Dec 12, 2026 : <a data-until="2026-12-12" href="https://prod1.agileticketing.net/websales/pages/info.aspx?evtinfo=582898~93654fc6-c14e-40a7-812a-d5d2baa619e8" target="_blank">The Lark</a> presented by Stupid Co as part of the Cannes Dogs Screening Series (Larkspur, CA)</span><span class="entry">Dec 13, 2026 : <a data-until="2026-12-13" href="https://lumierecinemala.com/films/cannes-dogs-la-the-woman-who-could-read-the-minds-of-dogs--xolo/" target="_blank">The Lumiere</a> presented by Stupid Co as part of the Cannes Dogs Screening Series (Los Angeles)</span>
             </h5>
                 </div>
                 <hr>
@@ -161,6 +161,7 @@
 
 </script>
 
+<script>/* Ticket links turn into plain text the day after the screening (a[data-until="YYYY-MM-DD"], Pacific time) */document.querySelectorAll("a[data-until]").forEach(function(a){if(Date.now()>new Date(a.dataset.until+"T23:59:59-08:00").getTime())a.replaceWith(document.createTextNode(a.textContent));});</script>
 </body>
 
 </html>

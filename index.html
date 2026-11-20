@@ -77,8 +77,8 @@
 
                 <div class="accolades">
                 <strong>Screenings & Accolades</strong> <br>
-                <span class="entry">The Woman Who Could Read the Minds of Dogs - Dec 13, 2026 <a href="https://lumierecinemala.com/films/cannes-dogs-la-the-woman-who-could-read-the-minds-of-dogs--xolo/" target="_blank">The Lumiere</a> presented by Stupid Co as part of the Cannes Dogs Screening Series (Los Angeles)</span>
-                <span class="entry">The Woman Who Could Read the Minds of Dogs - Dec 12, 2026 <a href="https://prod1.agileticketing.net/websales/pages/info.aspx?evtinfo=582898~93654fc6-c14e-40a7-812a-d5d2baa619e8" target="_blank">The Lark</a> presented by Stupid Co as part of the Cannes Dogs Screening Series (Larkspur, CA)</span>
+                <span class="entry">The Woman Who Could Read the Minds of Dogs - Dec 13, 2026 <a data-until="2026-12-13" href="https://lumierecinemala.com/films/cannes-dogs-la-the-woman-who-could-read-the-minds-of-dogs--xolo/" target="_blank">The Lumiere</a> presented by Stupid Co as part of the Cannes Dogs Screening Series (Los Angeles)</span>
+                <span class="entry">The Woman Who Could Read the Minds of Dogs - Dec 12, 2026 <a data-until="2026-12-12" href="https://prod1.agileticketing.net/websales/pages/info.aspx?evtinfo=582898~93654fc6-c14e-40a7-812a-d5d2baa619e8" target="_blank">The Lark</a> presented by Stupid Co as part of the Cannes Dogs Screening Series (Larkspur, CA)</span>
                 <span class="entry">The Woman Who Could Read the Minds of Dogs - Nov 1, 2026 The Paradise presented by Stupid Co as part of the Cannes Dogs Screening Series (Toronto)</span>
                 <span class="entry">The Woman Who Could Read the Minds of Dogs - June 4, 2026 Rio Cinema presented by Stupid Co as part of the Cannes Dogs Screening Series (London)</span>
                 <span class="entry">The Woman Who Could Read the Minds of Dogs - April 26, 2026 Low Cinema w/ Q&A moderated by Caveh Zahedi (NYC) [Sold out screening]</span>
@@ -151,6 +151,7 @@
 
 </script>
 
+<script>/* Ticket links turn into plain text the day after the screening (a[data-until="YYYY-MM-DD"], Pacific time) */document.querySelectorAll("a[data-until]").forEach(function(a){if(Date.now()>new Date(a.dataset.until+"T23:59:59-08:00").getTime())a.replaceWith(document.createTextNode(a.textContent));});</script>
 </body>
 
 </html>
